@@ -11,15 +11,14 @@ const initialValue = {
 };
 
 const CheckoutForm = (props) => {
-  const [values, showSuccessMessage, handleChanges, handleSubmit] = useForm(
-    initialValue,
-    false
+  const [showSuccessMessage, values, handleChanges, handleSubmit] = useForm(
+    initialValue
   );
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Checkout Form</h2>
+        <h2 data-testid="header"> Checkout Form</h2>
         <label>
           First Name:
           <input

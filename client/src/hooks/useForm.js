@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 
-const useForm = (intialValue, successMessage) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(successMessage);
-  const [values, setValues] = useState(intialValue);
+const useForm = (initialValue) => {
+  const [showSuccessMessage, setShowSuccessMessage] = useState();
+  const [values, setValues] = useState(initialValue);
 
   const handleChanges = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setShowSuccessMessage(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowSuccessMessage({
+      ...showSuccessMessage,
+      showSuccessMessage: true,
+    });
   };
   return [showSuccessMessage, values, handleChanges, handleSubmit];
 };

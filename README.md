@@ -29,6 +29,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+   To build stateful class components we start off by using a function that extends react.component, we then use constructor/super to get access to props. You declare this.state and its initial value. Its updated based on mounting, updating ad unmounting components.
 
 2. Describe the different phases of the component lifecycle.
 

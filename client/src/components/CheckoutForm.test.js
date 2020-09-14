@@ -1,8 +1,17 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
-import { text } from "body-parser";
 
-test("form header renders", () => {});
+// Write up the two tests here and make sure they are testing what the title shows
 
-test("form shows success message on submit with form details", () => {});
+test("form header renders", () => {
+  const { getByTestId } = render(<CheckoutForm />);
+  getByTestId("header");
+});
+
+test("form shows success message on submit with form details", () => {
+  const { getByText, getByTestId } = render(<CheckoutForm />);
+  const button = getByText("Checkout");
+  fireEvent.click(button);
+  getByTestId("successMessage");
+});
